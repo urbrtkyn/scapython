@@ -1,0 +1,1 @@
+from scapy.all import *; [print(f"{h} tiene el 445 abierto") for h, r in sr(IP(dst="192.168.1.0/24")/TCP(dport=445, flags="S"), timeout=1, verbose=0)[0] if r.haslayer(TCP) and r.getlayer(TCP).flags == 0x12]
