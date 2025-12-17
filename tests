@@ -1,0 +1,4 @@
+Get-NetRoute -AddressFamily IPv4 | Select-Object DestinationPrefix, NextHop, RouteMetric, InterfaceAlias | Format-Table
+
+
+1..50 | ForEach-Object { $ip="10.148.13.$_"; if ((TNC $ip -Port 3389 -InformationLevel Quiet)) { "$ip : RDP ABIERTO" } }
